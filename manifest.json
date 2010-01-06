@@ -1,0 +1,14 @@
+{
+	"name": "Skip Redirector",
+	"version": "1.0",
+	"background_page": "background.html",
+	"permissions": [
+		"http://wedata.net/"
+	],
+	"content_scripts": [
+		{
+			"js"     : ["skip_redirector.js"],
+			"matches": ["http://*/*"]
+		}
+	]
+}
