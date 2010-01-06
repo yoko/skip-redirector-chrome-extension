@@ -1,6 +1,7 @@
 {
 	"name": "Skip Redirector",
 	"version": "1.0",
+	"description": "Skip some URL redirector and age check.",
 	"background_page": "background.html",
 	"permissions": [
 		"http://wedata.net/"
