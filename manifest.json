@@ -1,6 +1,6 @@
 {
 	"name": "Skip Redirector",
-	"version": "1.0",
+	"version": "1.0.1",
 	"description": "Skip some URL redirector and age check.",
 	"background_page": "background.html",
 	"permissions": [
@@ -9,7 +9,7 @@
 	"content_scripts": [
 		{
 			"js"     : ["skip_redirector.js"],
-			"matches": ["http://*/*"]
+			"matches": ["http://*/*", "https://*/*"]
 		}
 	]
 }
