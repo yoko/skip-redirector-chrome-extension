@@ -1,5 +1,6 @@
 
 const API = 'http://wedata.net/databases/Redirector/items.json';
+const EXPIRES = 7;
 
 chrome.extension.onRequest.addListener(function(request, sender, callback) {
 	var xhr, timer;
@@ -39,7 +40,7 @@ function save(data) {
 	if (data)
 		localStorage.stash = JSON.stringify({
 			data   : data,
-			expires: +new Date + 1000 * 60 * 60 * 24
+			expires: +new Date + 1000 * 60 * 60 * 24 * EXPIRES
 		});
 	else
 		delete localStorage.stash;
