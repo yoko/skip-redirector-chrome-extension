@@ -1,3 +1,4 @@
+'use strict';
 
 chrome.extension.sendRequest(null, function(data) {
 	var i = data.length;

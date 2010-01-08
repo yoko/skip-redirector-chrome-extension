@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="options.css"/>
+</head>
+<body>
+<header>
+<h1>Skip Redirector</h1>
+</header>
+
+<section id="preferences">
+<h2>Preferences</h2>
+<dl>
+<dt>Definition list</dt>
+<dd>
+<p>A definition list is automatically updated weekly.</p>
+<p id="update"><input type="button" id="update-button" value="Update Now" onclick="update()"/> <span id="update-status"/></p>
+</dd>
+</dl>
+</section>
+
+<section id="supported">
+<h2>Supported Redirectors</h2>
+<p>Supports <span id="total-item">-</span> redirectors now:</p>
+<ul></ul>
+<p><a href="http://wedata.net/databases/Redirector/items">See details</a></p>
+<p>If you not found your favorite site into the list, <a href="http://wedata.net/databases/Redirector/items/new">you can add a redirector</a> using XPath (or RegExp).</p>
+</section>
+
+<section id="license">
+<h2>License</h2>
+<pre></pre>
+</section>
+
+<script src="options.js"></script>
+</body>
+</html>

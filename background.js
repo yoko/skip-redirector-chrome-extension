@@ -1,3 +1,4 @@
+'use strict';
 
 const API = 'http://wedata.net/databases/Redirector/items.json';
 const EXPIRES = 7;
@@ -5,9 +6,10 @@ const EXPIRES = 7;
 chrome.extension.onRequest.addListener(function(request, sender, callback) {
 	var xhr, timer;
 	var stash = load();
-	if (stash && stash.expires >= +new Date)
+	if ((!request || request && !request.force_update) && stash && stash.expires >= +new Date)
 		callback(stash.data);
 	else {
+		console.log('new!')
 		xhr = new XMLHttpRequest;
 		xhr.open('GET', API, true);
 		xhr.onload = function() {

@@ -1,0 +1,56 @@
+@charset 'UTF-8';
+
+body {
+	margin: 25px 25px 50px;
+	font: 12px sans-serif;
+	color: #333;
+}
+
+dl {
+	margin: 1.5em 0;
+}
+
+dt {
+	float: left;
+	clear: both;
+	width: 100px;
+	margin: 0 0 0.5em;
+}
+
+dt::after {
+	content: ':';
+}
+
+dd {
+	margin: 0 0 0.5em 100px;
+}
+
+img	{
+	vertical-align: middle;
+	border: none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+h1 {
+	color: #555;
+}
+
+section {
+	margin: 25px 5px;
+}
+
+#update {
+	height: 25px;
+}
+
+#update-status {
+	font-size: 0.8em;
+	color: #999;
+}
+
+#supported ul {
+	-webkit-column-count: 3;
+}
