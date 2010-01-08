@@ -10,7 +10,7 @@ function update() {
 	var status = $('#update-status');
 	var button = $('#update-button');
 	button.disabled = true;
-	status.innerHTML = '<img src="images/loading.gif" alt="" width="16" height="16">';
+	status.innerHTML = '<img src="images/loading.gif" alt="" width="16" height="16"/>';
 
 	chrome.extension.sendRequest({ force_update: true }, function(data) {
 		status.innerText = 'Updated';
