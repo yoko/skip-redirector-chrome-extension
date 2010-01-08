@@ -9,7 +9,6 @@ chrome.extension.onRequest.addListener(function(request, sender, callback) {
 	if ((!request || request && !request.force_update) && stash && stash.expires >= +new Date)
 		callback(stash.data);
 	else {
-		console.log('new!')
 		xhr = new XMLHttpRequest;
 		xhr.open('GET', API, true);
 		xhr.onload = function() {
