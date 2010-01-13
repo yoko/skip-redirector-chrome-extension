@@ -4,14 +4,17 @@ chrome.extension.sendRequest(null, function(data) {
 	var i = data.length;
 	while (i--) {
 		var item = data[i].data;
+		if (item.fixme) continue;
 		var url = item.url;
 		var link = item.link;
 		var replace_url = item.replace_url;
 		if (new RegExp(url).test(location.href)) {
 			if (replace_url) {
 				var reditrect_url = decodeURIComponent(location.href.replace(new RegExp(url), replace_url));
-				if (/^https?:\/\//.test(reditrect_url))
+				if (/^https?:\/\//.test(reditrect_url)) {
 					location.href = reditrect_url;
+					return;
+				}
 			}
 			else if (link) {
 				var a = $X(link)[0];
@@ -19,9 +22,9 @@ chrome.extension.sendRequest(null, function(data) {
 					var e = document.createEvent('MouseEvent');
 					e.initEvent('click', false, true);
 					a.dispatchEvent(e);
+					return;
 				}
 			}
-			return;
 		}
 	}
 });
