@@ -23,18 +23,18 @@ function show_item_list() {
 		var list = [],
 			length = data.length;
 
-		$('#total-item').innerText = length;
-
+		var new_length = 0;
 		for (var i = 0; i < length; i++) {
 			var item = data[i];
-			var name = item.name, site_url = item.data.site_url;
+			var name = item.name, site_url = item.data.site_url, fixme = item.data.fixme;
 			list.push(
-				site_url ?
-					'<li><a href="'+site_url+'">'+name+'</a></li>' :
-					'<li>'+name+'</li>'
+				fixme    ? '<li class="fixme">'+name+'</li>' :
+				site_url ? '<li><a href="'+site_url+'">'+name+'</a></li>' :
+				           '<li>'+name+'</li>'
 			);
+			if (!fixme) new_length++;
 		}
-
+		$('#total-item').innerText = new_length;
 		$('#supported ul').innerHTML = list.join('');
 	});
 }

@@ -54,3 +54,7 @@ section {
 #supported ul {
 	-webkit-column-count: 3;
 }
+
+#supported ul .fixme {
+	color: #ddd;
+}
