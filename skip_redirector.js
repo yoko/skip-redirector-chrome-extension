@@ -1,4 +1,3 @@
-'use strict';
 
 chrome.extension.sendRequest(null, function(data) {
 	var i = data.length;
@@ -20,7 +19,7 @@ chrome.extension.sendRequest(null, function(data) {
 				var a = $X(link)[0];
 				if (a) {
 					var e = document.createEvent('MouseEvent');
-					e.initEvent('click', false, true);
+					e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
 					a.dispatchEvent(e);
 					return;
 				}

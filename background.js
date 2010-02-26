@@ -1,4 +1,3 @@
-'use strict';
 
 const API = 'http://wedata.net/databases/Redirector/items.json';
 const EXPIRES = 7;
