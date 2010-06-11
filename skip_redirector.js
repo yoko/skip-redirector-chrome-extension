@@ -1,5 +1,14 @@
 
-chrome.extension.sendRequest(null, function(data) {
+if (this.safari) {
+	safari.self.tab.dispatchMessage('request');
+	safari.self.addEventListener('message', function(e) {
+		handler(e.message);
+	}, false);
+}
+else if (this.chrome)
+	chrome.extension.sendRequest(null, handler);
+
+function handler(data) {
 	var i = data.length;
 	while (i--) {
 		var item = data[i].data;
@@ -26,7 +35,7 @@ chrome.extension.sendRequest(null, function(data) {
 			}
 		}
 	}
-});
+}
 
 
 // http://gist.github.com/3242
