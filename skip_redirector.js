@@ -6,7 +6,7 @@ if (this.safari) {
 	}, false);
 }
 else if (this.chrome)
-	chrome.extension.sendRequest(null, handler);
+	chrome.extension.sendRequest({}, handler);
 
 function handler(data) {
 	var i = data.length;
