@@ -11,7 +11,7 @@ if (this.safari) {
 		if (stash && stash.expires >= +new Date)
 			handler(stash.data);
 		else
-			request(stash, handler);
+			update(stash, handler);
 	}, false);
 }
 else if (this.chrome)
@@ -20,11 +20,11 @@ else if (this.chrome)
 		if ((!request || request && !request.force_update) && stash && stash.expires >= +new Date)
 			callback(stash.data);
 		else
-			request(stash, callback);
+			update(stash, callback);
 	});
 
 
-function request(handler) {
+function update(stash, handler) {
 	var xhr, timer;
 	xhr = new XMLHttpRequest;
 	xhr.open('GET', API, true);
